@@ -64,6 +64,7 @@ class MyApp extends StatelessWidget {
 
         // صفحة تقديم الشكوى مع arguments من MinistriesScreen
         '/complaint': (context) {
+
           final args = ModalRoute.of(context)!.settings.arguments
               as Map<String, dynamic>;
 

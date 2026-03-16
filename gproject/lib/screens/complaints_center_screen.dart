@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ComplaintsCenterScreen extends StatefulWidget {
-  const ComplaintsCenterScreen({Key? key}) : super(key: key);
+  const ComplaintsCenterScreen({super.key});
 
   @override
   State<ComplaintsCenterScreen> createState() => _ComplaintsCenterScreenState();
@@ -169,9 +169,9 @@ class _ComplaintsCenterScreenState extends State<ComplaintsCenterScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 16),
                     child: Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: Column(
-                            children: const [
+                            children: [
                               SizedBox(height: 12),
                               Text(
                                 'شكاويي',
@@ -308,6 +308,7 @@ class _ComplaintsCenterScreenState extends State<ComplaintsCenterScreen> {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         decoration: BoxDecoration(
           color: isSelected
+              // ignore: deprecated_member_use
               ? primaryColor.withOpacity(0.15)
               : const Color(0xFFE2E8F0), // slate-200
           borderRadius: BorderRadius.circular(999),
@@ -335,12 +336,11 @@ class _ComplaintCard extends StatelessWidget {
   final String status;
 
   const _ComplaintCard({
-    Key? key,
     required this.title,
     required this.meta,
     required this.date,
     required this.status,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -354,6 +354,7 @@ class _ComplaintCard extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
         boxShadow: [
           BoxShadow(
+            // ignore: deprecated_member_use
             color: Colors.black.withOpacity(0.03),
             blurRadius: 5,
             offset: const Offset(0, 2),

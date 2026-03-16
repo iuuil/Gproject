@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
@@ -34,6 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
     await Future.delayed(const Duration(milliseconds: 300));
 
     if (savedEmail == null || savedPassword == null) {
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
             content: Text('لا يوجد حساب محفوظ، يرجى إنشاء حساب أولاً')),
@@ -47,9 +50,11 @@ class _LoginScreenState extends State<LoginScreen> {
       setState(() => _isLoading = false);
 
       // بدل MaterialPageRoute
+      // ignore: use_build_context_synchronously
       Navigator.pushReplacementNamed(context, '/ministries');
     } else {
       setState(() => _isLoading = false);
+      // ignore: use_build_context_synchronously
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('بيانات الدخول غير صحيحة')),
       );
@@ -140,6 +145,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               boxShadow: [
                                 BoxShadow(
                                   color:
+                                      // ignore: deprecated_member_use
                                       Colors.black.withOpacity(0.08),
                                   blurRadius: 10,
                                   offset: const Offset(0, 4),
@@ -193,7 +199,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16),
                               border: Border.all(
-                                color: Color(0xFFCBD5F1),
+                                color: const Color(0xFFCBD5F1),
                               ),
                             ),
                             child: Row(
@@ -240,7 +246,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               color: Colors.white,
                               borderRadius: BorderRadius.circular(16),
                               border: Border.all(
-                                color: Color(0xFFCBD5F1),
+                                color: const Color(0xFFCBD5F1),
                               ),
                             ),
                             child: Row(

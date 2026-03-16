@@ -385,6 +385,7 @@ class _ComplaintScreenState extends State<ComplaintScreen> {
                 bottom: 0,
                 child: Container(
                   decoration: BoxDecoration(
+                    // ignore: deprecated_member_use
                     color: const Color(0xFFF6F7F8).withOpacity(0.96),
                     border: const Border(
                       top: BorderSide(

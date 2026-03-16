@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class MapReportScreen extends StatefulWidget {
-  const MapReportScreen({Key? key}) : super(key: key);
+  const MapReportScreen({super.key});
 
   @override
   State<MapReportScreen> createState() => _MapReportScreenState();
@@ -104,6 +104,7 @@ class _MapReportScreenState extends State<MapReportScreen> {
                           borderRadius: BorderRadius.circular(16),
                           boxShadow: [
                             BoxShadow(
+                              // ignore: deprecated_member_use
                               color: Colors.black.withOpacity(0.1),
                               blurRadius: 6,
                               offset: const Offset(0, 2),
@@ -133,6 +134,7 @@ class _MapReportScreenState extends State<MapReportScreen> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
+                                  // ignore: deprecated_member_use
                                   color: Colors.black.withOpacity(0.15),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
@@ -173,6 +175,7 @@ class _MapReportScreenState extends State<MapReportScreen> {
                               borderRadius: BorderRadius.circular(10),
                               boxShadow: [
                                 BoxShadow(
+                                  // ignore: deprecated_member_use
                                   color: Colors.black.withOpacity(0.15),
                                   blurRadius: 6,
                                   offset: const Offset(0, 2),
@@ -180,12 +183,12 @@ class _MapReportScreenState extends State<MapReportScreen> {
                               ],
                             ),
                             child: IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.my_location,
                                 color: primaryColor,
                               ),
                               onPressed: () async {
-                                // TODO: اجلب موقع المستخدم الفعلي لو تحب
+                                
                                 final controller = await _mapController.future;
                                 controller.animateCamera(
                                   CameraUpdate.newLatLng(_initialPosition),
@@ -211,6 +214,7 @@ class _MapReportScreenState extends State<MapReportScreen> {
                             width: 6,
                             height: 3,
                             decoration: BoxDecoration(
+                              // ignore: deprecated_member_use
                               color: Colors.black.withOpacity(0.3),
                               borderRadius: BorderRadius.circular(100),
                             ),
@@ -253,11 +257,11 @@ class _MapReportScreenState extends State<MapReportScreen> {
                         ),
                       ),
 
-                      Align(
+                      const Align(
                         alignment: Alignment.centerRight,
                         child: Text(
                           'الموقع المحدد',
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
                             color: Color(0xFF0F172A),
